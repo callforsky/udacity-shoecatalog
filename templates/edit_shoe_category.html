@@ -1,0 +1,20 @@
+{% extends "main.html" %}
+{% block content %}
+<h3>Edit Shoe Category</h3>
+<!-- The url_for function reads editedCategory variable from edit_shoe_cateogry function's ELSE part, then send category_id back to the first part of the same function -->
+<form action="{{url_for('edit_shoe_category', category_id = editedCategory.id)}}" method = "post">
+	<div class="form-group">
+		<label for="name">New Name:</label>
+		<input type="text" class="form-control" name="name" value="{{editedCategory.name}}">
+		<div class="padding-bottom"></div>
+		<button type="submit" class="btn btn-success" id="submit" type="submit">
+			Save
+		</button>
+		<a href='{{url_for('show_one_category', category_id=editedCategory.id)}}'>
+			<button class="btn btn-danger" type="button">
+				Cancel
+			</button>
+		</a>
+	</div>
+</form>
+{% endblock %}
