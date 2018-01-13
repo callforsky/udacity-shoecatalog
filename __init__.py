@@ -345,4 +345,4 @@ def new_item(category_id):
 if __name__ == '__main__':
 	app.secret_key = 'udacity'
 	app.debug = True
-	app.run(host='52.15.80.215', port=80)
+	app.run(host='0.0.0.0', port=5000)
